@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
+            //Old data is [String url = "http://api.androidhive.info/contacts/";]
+            //Update it become like below :
+
             String url = "https://api.androidhive.info/contacts/";
             String jsonStr = sh.makeServiceCall(url);
 
