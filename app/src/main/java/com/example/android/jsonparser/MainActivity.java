@@ -8,6 +8,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         contactList = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.list);
+        lv = findViewById(R.id.list);
 
         new GetContacts().execute();
     }
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(MainActivity.this,"Json Data is downloading",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Json Data is downloading", Toast.LENGTH_LONG).show();
 
         }
 
@@ -83,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
                         contact.put("name", name);
                         contact.put("email", email);
                         contact.put("mobile", mobile);
+                        contact.put("address", address);
+                        contact.put("gender", gender);
+                        contact.put("home", home);
+                        contact.put("office", office);
 
                         // adding contact to contact list
                         contactList.add(contact);
@@ -119,8 +124,12 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             ListAdapter adapter = new SimpleAdapter(MainActivity.this, contactList,
-                    R.layout.list_item, new String[]{ "email","mobile"},
-                    new int[]{R.id.email, R.id.mobile});
+                    R.layout.list_item, new String[]{"name", "address", "email", "mobile"},
+                    new int[]{
+                            R.id.address,
+                            R.id.email,
+                            R.id.mobile
+                    });
             lv.setAdapter(adapter);
         }
     }
