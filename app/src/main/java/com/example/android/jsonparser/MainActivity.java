@@ -124,12 +124,10 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             ListAdapter adapter = new SimpleAdapter(MainActivity.this, contactList,
-                    R.layout.list_item, new String[]{"name", "address", "email", "mobile"},
-                    new int[]{
-                            R.id.address,
-                            R.id.email,
-                            R.id.mobile
-                    });
+                    R.layout.list_item,
+                    new String[]{"name", "address", "email", "mobile"},
+                    new int[]{R.id.name, R.id.address, R.id.email, R.id.mobile});
+
             lv.setAdapter(adapter);
         }
     }
