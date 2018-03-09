@@ -15,7 +15,16 @@
         android:textColor="@color/colorName"
         android:textStyle="bold"
         android:textAllCaps="true"
+        android:text="@string/name"
         tools:text="Jery"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dip"
+        android:textColor="@color/colorAccent"
+        tools:text="mr.jerylee@gmail.com" />
 
     <TextView
         android:id="@+id/address"
@@ -25,14 +34,6 @@
         android:textColor="@color/colorName"
         android:textStyle="italic"
         tools:text="Address at  no"/>
-
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent"
-        tools:text="mr.jerylee@gmail.com"/>
 
     <TextView
         android:id="@+id/mobile"
